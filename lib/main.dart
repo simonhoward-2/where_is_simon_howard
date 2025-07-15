@@ -28,16 +28,22 @@ class WebApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: LocationsHistoryBrowser(
-              mapsUrlTemplate: AppConfig.mapsUrlTemplate,
-              locationVisits: simonsVisits,
-              style: LocationsHistoryBrowserStyle(
-                selectedLocationBackgroundColor: Colors.black,
-                locationVisitBackgroundColor: websiteColor,
-                locationVisitTextColor: Colors.white,
-                selectedLocationTextColor: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 600, maxHeight: 800),
+              child: Align(
+                alignment: Alignment.center,
+                child: LocationsHistoryBrowser(
+                  mapsUrlTemplate: AppConfig.mapsUrlTemplate,
+                  locationVisits: simonsVisits,
+                  style: LocationsHistoryBrowserStyle(
+                    selectedLocationBackgroundColor: Colors.black,
+                    locationVisitBackgroundColor: websiteColor,
+                    locationVisitTextColor: Colors.white,
+                    selectedLocationTextColor: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),
