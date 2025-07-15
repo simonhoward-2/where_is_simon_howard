@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Load environment variables from .env file
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "env");
 
   // Run the app
   runApp(const WebApp());
@@ -25,6 +25,7 @@ class WebApp extends StatelessWidget {
       title: 'Where in the world is Simon Howard?',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: websiteColor),
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: Scaffold(
         body: Center(
