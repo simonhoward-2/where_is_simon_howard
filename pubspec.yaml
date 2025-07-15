@@ -31,7 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   locations_history_browser:
-    path: ../locations_history_browser
+    # path: ../locations_history_browser
+    git: https://github.com/simonhoward-2/locations_history_browser.git
   flutter_dotenv: ^5.1.0
   flutter_riverpod: ^2.6.1
 
