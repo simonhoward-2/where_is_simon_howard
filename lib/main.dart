@@ -24,7 +24,10 @@ class WebApp extends StatelessWidget {
     return MaterialApp(
       title: 'Where in the world is Simon Howard?',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: websiteColor),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: websiteColor,
+          surface: Colors.white,
+        ),
         scaffoldBackgroundColor: Colors.white,
       ),
       home: Scaffold(
