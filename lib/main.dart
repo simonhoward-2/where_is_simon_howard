@@ -1,3 +1,5 @@
+import 'dart:math' as Math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:locations_history_browser/locations_history_browser.dart';
@@ -21,6 +23,7 @@ class WebApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const websiteColor = Color(0xFF6D70DC);
+
     return MaterialApp(
       title: 'Where in the world is Simon Howard?',
       theme: ThemeData(
@@ -32,21 +35,18 @@ class WebApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 600, maxHeight: 800),
-              child: Align(
-                alignment: Alignment.center,
-                child: LocationsHistoryBrowser(
-                  mapsUrlTemplate: AppConfig.mapsUrlTemplate,
-                  locationVisits: simonsVisits,
-                  style: LocationsHistoryBrowserStyle(
-                    selectedLocationBackgroundColor: Colors.black,
-                    locationVisitBackgroundColor: websiteColor,
-                    locationVisitTextColor: Colors.white,
-                    selectedLocationTextColor: Colors.white,
-                  ),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 700, maxHeight: 700),
+            child: Align(
+              alignment: Alignment.center,
+              child: LocationsHistoryBrowser(
+                mapsUrlTemplate: AppConfig.mapsUrlTemplate,
+                locationVisits: simonsVisits,
+                style: LocationsHistoryBrowserStyle(
+                  selectedLocationBackgroundColor: Colors.black,
+                  locationVisitBackgroundColor: websiteColor,
+                  locationVisitTextColor: Colors.white,
+                  selectedLocationTextColor: Colors.white,
                 ),
               ),
             ),
